@@ -3,7 +3,7 @@
   "private": true,
   "name": "Yachtum",
   "description": "A tutorial application for AngularJS",
-  "repository": "https://github.com/angular/angular-phonecat",
+  "repository": "https://github.com/Guillem-db/Yachtum",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
