@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-3">
+<img ng-src="{{barco.images[0]}}" class="barco">
+ </div>
+<h1>{{barco.nombre}}</h1>
+ 
+<div class="col-md-8">
+  <div class="row">
+<ul class="barco-thumbs">
+  <li ng-repeat="img in barco.images">
+    <img ng-src="{{img}}">
+  </li>
+</ul>
+</div>
+<div class="row">
+<barco-panels></barco-panels>
+</div>
+</div>

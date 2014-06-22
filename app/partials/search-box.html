@@ -1,0 +1,51 @@
+<div class="container-fluid" ng-controller="BarcoListCtrl as listCtrl">
+    <div class="container-fluid">
+    <div class="col-md-4">
+        <!--Sidebar content-->
+   
+    </div>
+    <div class="col-md-4" >    
+    <h4 ng-show="listCtrl.searchClicked(11)">Encuentre su barco perfecto y disfrute de sus ventajas</h4>
+    <h4 ng-show="listCtrl.searchClicked(10)">Resultados de la búsqueda para</h4>
+    <form name="reviewForm" ng-submit="listCtrl.clickSearchb(10)">
+        <div class="row">
+           <div class="col-md-12"> 
+                <div ng-show="listCtrl.searchClicked(12)">Selecciona un puerto:</div>
+                <div ng-show="listCtrl.searchClicked(12)">Puerto seleccionado:</div>
+                <select ng-options="puerto for puerto in listaPuertos" ng-model="barco.puerto" required>     
+                    <option value="" >-- Elige tu puerto de origen --</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">   
+            <div class="col-md-6">  
+                <p>fecha de salida <input type="date" ng-model="dstart" min="{{listCtrl.today()| date:'mm/dd/yyyy'}}" required> </p>
+            </div>
+            <div class="col-md-6">  
+                <p>fecha de llegada <input type="date" min="{{dstart}}" required="{{dstart}}" ng-model="dend" required></p>
+            </div>
+        </div>
+        PENE {{listCtrl.today()| date:'MM/dd/yyyy'}}
+        <div class="row">
+            <div class="col-md-7">          
+                <!--Embarcación:-->
+                <select placeholder="Selecciona un puerto" ng-options="tipoBarco for puerto in listaTiposBarco" ng-model="tiposBarco" >     
+                
+                <option value="">--Elige el tipo de Barco--</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-primary pull-right" value="Buscar" />
+            </div>
+        </div>      
+    </form>
+    </div>
+
+
+</div>
+<bottom-thumbnail ng-show="listCtrl.searchClicked(11)"></bottom-thumbnail>
+<div class="container-fluid">
+<search-list ng-show="listCtrl.searchClicked(10)"></search-list>
+</div>
+</div

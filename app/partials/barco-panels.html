@@ -1,0 +1,56 @@
+<section class='panel' >
+<ul class='nav nav-pills'>
+  <li ng-class="{active:panels.isSelected(2)}"> <a href ng-click="panels.selectTab(2)">Descripcion</a> </li>
+	<li ng-class="{active:panels.isSelected(1)}"> <a href ng-click="panels.selectTab(1)">Precio</a> </li>
+	
+	<li ng-class="{active:panels.isSelected(3)}"> <a href ng-click="panels.selectTab(3)">Equipo</a></li>
+	<li ng-class="{active:panels.isSelected(4)}"> <a href ng-click="panels.selectTab(4)">Extras</a></li>
+</ul>
+
+<div class='panel' ng-show="panels.isSelected(2)"> <li>
+     <span>Descripción</span>
+     <dl>
+       <dt>Eslora</dt>
+       <dd>{{barco.descripcion.eslora}}</dd>
+       <dt>Manga</dt>
+       <dd>{{barco.descripcion.manga}}</dd>
+       <dt>Pasajeros</dt>
+       <dd>{{barco.descripcion.pasajeros}}</dd>
+       <dt>Camarotes</dt>
+       <dd>{{barco.descripcion.camarotes}}</dd>
+     </dl>
+   </li></div>
+<div class='panel' ng-show="panels.isSelected(1)"> <li>
+    <span>Precio</span>
+    <dl>
+      <dt>Precio por dias</dt>
+      <dd>{{barco.precio.ppdias|currency:'€'}}</dd>
+      <dt>Fianza</dt>
+      <dd>{{barco.precio.fianza|currency:'€'}}</dd>
+      <dt>Limpieza</dt>
+      <dd>{{barco.precio.limpieza|currency:'€'}}</dd>
+      <dt>Descuento</dt>
+      <dd>{{barco.precio.descuento|currency:'€'}}</dd>
+    </dl>
+  </li></div>
+<div class='panel' ng-show="panels.isSelected(3)"> <li>
+    <span>Equipo</span>
+    <dl>
+      <dd ng-repeat="eq in barco.equipo">{{eq}}</dd>      
+    </dl>
+  </li></div>
+<div class='panel' ng-show="panels.isSelected(4)"><li>
+    <span>Extras</span>
+    <dl>
+      <dd ng-repeat="ex in barco.extras track by $index">{{ex}}</dd>      
+    </dl>
+  </li></div>
+
+<ul class='nav nav-pills'>  
+  <li ng-class="{active:panels.ReviewSelected(5)}"> <a href ng-click="panels.selectReview(5)">Reviews</a> </li>
+</ul>  
+
+    <product-reviews ng-show="panels.ReviewSelected(5)"></product-reviews>
+  
+
+</section>

@@ -1,0 +1,10 @@
+{
+        "id": 1, 
+        "nombre": "Barco Test", 
+        "imageUrl": "img/barcos/yate.jpg", 
+        "empresa": "yachtum", 
+        "precio": {"ppdias":"200","fianza":"1000","limpieza":"100","descuento":"0.0"},
+        "equipo":{"emb_auxiliar":"true","mayor_enrollable":"true","radar":"false","plotter":"true"},
+        "extras":{"mot_fueraborda":"true","capitan":"true","cocinero":"false","capitan":"true"},
+        "descripcion":{"eslora":"15.4","manga":"5.3","pasajeros":"4","camarotes":"3"}}
+ 

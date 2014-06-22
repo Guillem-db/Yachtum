@@ -1,0 +1,93 @@
+<div class="conatiner-row-fluid" ng-controller="BarcoListCtrl">
+
+  <div class="row">
+  <div class="col-md-4">
+  </div>  
+  <div class="col-md-8">
+     <div class="row">
+      Ordenar por:
+     </div>
+    <div class="row">
+     <ul class='nav nav-pills'>
+  <li ng-class="{active:tab===2}"> <a href ng-click="tab=2; orderBarcos='porder';reverse=!reverse">Precio</a> </li>
+  <li ng-class="{active:tab===4}"> <a href ng-click="tab=4; orderBarcos='descripcion.eslora';reverse=!reverse">Eslora</a> </li>
+  
+  <li ng-class="{active:tab===3}"> <a href ng-click="tab=3; orderBarcos='descripcion.pasajeros';reverse=!reverse">Capacidad</a></li>
+  
+</ul>
+
+    </div>  
+  </div>
+</div>
+<br>
+  <div class="row">
+  <div class="col-md-2">
+  </div>  
+  <div class="col-md-8">
+
+  <ul class="barcos">
+    <section class="panel" ng-repeat="barco in barcos |filter:barco.puerto|orderBy:orderBarcos:reverse" >
+      <div class="conatiner-row-fluid">
+      <div class="row"> 
+        <div class="col-md-4">
+          <a href="#/barcos/{{barco.id}}" class="thumb"><img ng-src="{{barco.imageUrl}}"></a>
+          <ul class="thumb pull-right">
+            <li ng-repeat="img in barco.images">
+             <img ng-src="{{img}}">
+            </li>
+          </ul>
+       </div>
+       
+      <div class="col-md-4">
+        
+          <a href="#/barcos/{{barco.id}}"><h3>{{barco.nombre}}</h3></a>
+          <p>{{barco.empresa}}</p>
+         <section class="panel">
+       <div class="row">
+       <div class="col-md-5">
+       <dt>Puerto: {{barco.puerto}} </dt>
+       </div> 
+       <div class="col-md-5">
+       <dt>Año: {{barco.anyo}}</dt>
+        </div> 
+     </div>
+    
+       <div class="row">
+       <div class="col-md-5">     
+       <dt>Eslora: {{barco.descripcion.eslora}}</dt>
+        </div> 
+       <div class="col-md-5">
+       <dt>Manga: {{barco.descripcion.manga}}</dt>
+        </div> 
+     </div>
+     <div class="row">
+       <div class="col-md-5">
+       <dt>Pasajeros: {{barco.descripcion.pasajeros}} </dt>
+       </div> 
+       <div class="col-md-5">
+       <dt>Camarotes: {{barco.descripcion.camarotes}}</dt>      
+        </div> 
+     </div>
+    
+     <div class="row">
+      <div class="col-md-5">
+      <p>Extras incluidos</p>
+    </div>
+     </div>
+        </section>
+      </div>   
+      <div class="col-md-2">
+         
+          <p>Por solo</p>
+         <section class="panel">
+          <h4>{{barco.precio.ppdias|currency:'€'}}</h4>
+          <input class="btn btn-primary" value="Embárcate">
+         </section>
+      </div>   
+      </div> 
+    </div>
+    </section>  
+  </ul>
+  </div>  
+  </div>
+  </div>

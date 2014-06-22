@@ -1,0 +1,47 @@
+{
+        "id": 1, 
+        "nombre":"Barco Test", 
+        "imageUrl":"img/barcos/yate.jpg", 
+        "empresa":"yachtum", 
+        "precio":{
+        	"ppdias":200,
+        	"fianza":1000,
+        	"limpieza":100,
+        	"descuento":0.0
+        	},
+        "equipo":[
+        	"emb_auxiliar",
+        	"mayor_enrollable",
+        	"radar",
+        	"plotter"
+        	],
+        "extras":[
+            "mot_fueraborda",
+            "capitan",
+            "cocinero",
+            "elefante pequeño"
+            ],
+        "descripcion":{
+        	"eslora":15.4,
+        	"manga":5.3,
+        	"pasajeros":4,
+        	"camarotes":3
+        },
+        "images":[
+        "img/barcos/velero.jpg", 
+        "img/barcos/velero1.jpg",
+        "img/barcos/velero2.jpg", 
+        "img/barcos/velero3.jpg" 
+        ],
+       "reviews": [{
+        "stars": 3,
+        "body": "I think this gem was just OK, could honestly use more shine, IMO.",
+        "author": "JimmyDean@example.org",
+        "createdOn": 1397490980837
+      }, {
+        "stars": 4,
+        "body": "Any gem with 12 faces is for me!",
+        "author": "gemsRock@example.org",
+        "createdOn": 1397490980837
+      }]
+ }
